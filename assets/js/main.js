@@ -27,6 +27,11 @@ filterBtns.forEach(btn => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
+    const grid = document.querySelector('.projects-grid');
+    if (grid) {
+      if (filter === 'all') grid.classList.add('view-all');
+      else grid.classList.remove('view-all');
+    }
     projectCards.forEach(card => {
       const show = filter === 'all' || card.dataset.type === filter;
       card.style.display = show ? '' : 'none';
