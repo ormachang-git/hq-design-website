@@ -39,6 +39,17 @@ filterBtns.forEach(btn => {
   });
 });
 
+// Careers: apply button pre-selects position in form
+document.querySelectorAll('.apply-btn').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const pos = this.dataset.position;
+    if (pos) {
+      const sel = document.querySelector('#apply-form select[name="position"]');
+      if (sel) sel.value = pos;
+    }
+  });
+});
+
 // Intersection Observer for fade-in animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
