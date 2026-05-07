@@ -75,7 +75,7 @@
     <p style="font-family: var(--font-en); font-size: 13px; color: rgba(255,255,255,0.35);">Join a team with 31 years of real commercial projects — Kimpton, SECOM, Popeyes, Soup Spoon. Design and build under one roof.</p>
     <div style="margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap;">
       <a class="btn btn-primary" href="#positions">查看職缺 Open Positions</a>
-      <a class="btn btn-outline" href="mailto:info@hqdesign.tw">直接寄送履歷 Send CV</a>
+      <a class="btn btn-outline" href="#apply-form">直接寄送履歷 Send CV</a>
     </div>
   </div>
 </div>
@@ -265,6 +265,71 @@
   </div>
 </section>
 
+
+<!-- APPLY FORM -->
+<section id="apply-form" class="section" style="background: var(--bg);">
+  <div class="container">
+    <div class="section-title">
+      <span class="label">Join HQ</span>
+      <h2>直接應徵 Apply Now</h2>
+      <p class="sub-zh">填寫以下表單，我們將於 1 個工作天內回覆。</p>
+      <p class="sub-en en">Fill in the form below and we'll get back to you within 1 business day.</p>
+    </div>
+    <div style="max-width: 680px; margin: 0 auto;">
+      <form action="https://formspree.io/f/xaqvbkye" method="POST" style="display:flex; flex-direction:column; gap:20px;">
+        <input type="hidden" name="_subject" value="【HQ 應徵】新履歷投遞">
+        <input type="hidden" name="_language" value="zh">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>姓名 <span class="en-label en">Name</span></label>
+            <input type="text" name="name" placeholder="王小明" required>
+          </div>
+          <div class="form-group">
+            <label>應徵職位 <span class="en-label en">Position</span></label>
+            <select name="position" required>
+              <option value="">請選擇 Please select...</option>
+              <option>室內設計師 Interior Designer</option>
+              <option>專案經理 Project Manager</option>
+              <option>工程師 Site Engineer</option>
+              <option>業務開發 Business Development</option>
+              <option>其他 Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>聯絡信箱 <span class="en-label en">Email</span></label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>聯絡電話 <span class="en-label en">Phone</span></label>
+            <input type="tel" name="phone" placeholder="09xx-xxx-xxx">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>履歷 / 作品集連結 <span class="en-label en">Resume / Portfolio URL</span></label>
+          <input type="url" name="portfolio_url" placeholder="https://drive.google.com/... 或 LinkedIn 連結">
+        </div>
+
+        <div class="form-group">
+          <label>自我介紹 <span class="en-label en">About You</span></label>
+          <textarea name="message" rows="5" placeholder="請簡述您的相關經歷、擅長項目，以及為何有興趣加入惠強。&#10;&#10;Please briefly describe your experience, strengths, and why you'd like to join HQ."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:16px; font-size:15px;">
+          送出應徵 Submit Application →
+        </button>
+        <p style="text-align:center; font-size:12px; color:var(--light); font-family:var(--font-en);">
+          We respond within 1 business day · 一個工作天內回覆
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="cta-banner">
   <div class="container">
     <div class="cta-banner-inner">
@@ -273,7 +338,7 @@
         <p class="sub">寄送你的作品集與履歷，我們期待認識你。</p>
       </div>
       <div class="cta-actions">
-        <a class="btn btn-primary" href="mailto:info@hqdesign.tw?subject=加入惠強 — 作品集應徵">寄送作品集 Send Portfolio →</a>
+        <a class="btn btn-primary" href="#apply-form">直接應徵 Apply Now →</a>
         <div class="cta-contact-info">
           <a href="mailto:info@hqdesign.tw">✉ info@hqdesign.tw</a>
         </div>
