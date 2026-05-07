@@ -313,8 +313,10 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 52px;
+  gap: 16px 40px;
   flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .logo-item {
   font-family: var(--font-en);
