@@ -1,31 +1,295 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>惠強室內裝修 | HQ Interior & Space Design — 商業空間設計施工統包</title>
-  <meta name="description" content="惠強室內裝修，1995年創立，完成超過1,600件商業空間設計施工案件。服務上市企業、金融機構與國際品牌。設計施工統包，一站到位。">
+  <title>HQ Interior & Space Design | Commercial Fit-Out for International Brands · Taipei</title>
+  <meta name="description" content="Institutional-grade commercial fit-out for foreign-HQ enterprises, hotel groups and listed corporations expanding into Taiwan. 31 years. 1,600+ projects. Design & build under one contract.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* =========================================================
+       INTERNATIONAL-VERSION OVERRIDES (scoped, inline)
+       Loaded after style.css so these win cleanly.
+       ========================================================= */
+
+    /* --- Nav logo: real brand mark, cleaner sizing --- */
+    .nav-logo--int { display: flex; align-items: center; gap: 12px; }
+    .nav-logo--int img { height: 40px; width: auto; display: block; }
+    .nav-logo--int .name-en {
+      font-family: var(--font-en);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.2px;
+      line-height: 1.1;
+      display: block;
+    }
+    .nav-logo--int .name-zh {
+      font-size: 11px;
+      color: var(--light);
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* --- Hero rebuild: shorter, image on, content top-anchored --- */
+    .hero--int {
+      min-height: 88vh;
+      display: block;
+      align-items: initial;
+      padding-top: 0;
+    }
+    .hero--int .hero-bg {
+      background-image: url('assets/images/projects/secom-nangang-complex/photo-01.jpg');
+      background-position: center 40%;
+      opacity: 0.75;
+    }
+    .hero--int::after {
+      background: linear-gradient(180deg,
+        rgba(20,35,50,0.78) 0%,
+        rgba(20,35,50,0.68) 48%,
+        rgba(20,35,50,0.84) 100%);
+    }
+    .hero--int .hero-content {
+      padding-top: 168px;
+      padding-bottom: 56px;
+    }
+
+    /* Larger, tighter headline */
+    .hero--int .hero-headline {
+      font-size: clamp(48px, 7vw, 92px);
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    .hero--int .hero-sub-en {
+      font-size: 18px;
+      max-width: 640px;
+      margin-bottom: 14px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.5;
+    }
+    .hero--int .hero-sub-zh {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 40px;
+      max-width: 640px;
+    }
+    .hero--int .hero-actions { margin-bottom: 56px; }
+    .hero--int .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      padding: 16px 32px;
+      font-size: 15px;
+    }
+    .hero--int .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+
+    /* Stats bar — fixed +%M baseline */
+    .hero--int .hero-stats {
+      gap: 56px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+    }
+    .hero--int .stat-num {
+      font-size: 48px;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+    }
+    .hero--int .stat-num .stat-unit {
+      font-size: 32px;
+      color: var(--accent);
+      font-weight: 700;
+      vertical-align: baseline;
+    }
+    .hero--int .stat-label-en { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; }
+
+    /* --- Logos bar restyled: stacked EN / ZH labels --- */
+    .logos-bar--int { background: var(--white); border-bottom: 1px solid var(--border); padding: 36px 0; }
+    .logos-bar--int .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px 20px;
+      align-items: center;
+    }
+    .logos-bar--int .logo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 4px;
+      padding: 4px 0;
+      opacity: 0.88;
+      transition: opacity 0.2s;
+    }
+    .logos-bar--int .logo-item:hover { opacity: 1; }
+    .logos-bar--int .logo-item .lo-en {
+      font-family: var(--font-en);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      color: var(--brand);
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .logos-bar--int .logo-item .lo-zh {
+      font-family: var(--font-zh);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--light);
+      line-height: 1.2;
+      letter-spacing: 0.3px;
+    }
+    .logos-bar--int .logos-bar-label {
+      font-family: var(--font-en);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--light);
+      text-align: center;
+      margin-bottom: 22px;
+      font-weight: 600;
+    }
+
+    /* --- "Opening in Taiwan?" wedge section --- */
+    .taiwan-wedge {
+      background: var(--brand);
+      color: var(--white);
+      padding: 88px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .taiwan-wedge::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 45%;
+      background-image: url('assets/images/projects/csun/render-01.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.20;
+      pointer-events: none;
+    }
+    .taiwan-wedge::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; right: 35%;
+      width: 30%;
+      background: linear-gradient(90deg, var(--brand) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .taiwan-wedge .container { position: relative; z-index: 1; }
+    .taiwan-wedge .label { color: var(--accent); margin-bottom: 14px; }
+    .taiwan-wedge h2 {
+      font-family: var(--font-en);
+      font-size: clamp(32px, 4.2vw, 48px);
+      letter-spacing: -1.2px;
+      max-width: 720px;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .taiwan-wedge .lead {
+      max-width: 640px;
+      font-size: 17px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .taiwan-wedge .checks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px 28px;
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+    .taiwan-wedge .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-family: var(--font-en);
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+    }
+    .taiwan-wedge .check .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* --- Hero scroll cue --- */
+    .scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-en);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scroll-cue .line {
+      width: 1px; height: 36px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.40), transparent);
+    }
+
+    /* Unified project card title — Chinese on top, English below */
+    .project-name {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+    .project-name .name-zh {
+      font-family: var(--font-zh);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .project-name .name-en {
+      font-family: var(--font-en);
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.2px;
+    }
+
+    /* Mobile fixes */
+    @media (max-width: 768px) {
+      .hero--int .hero-content { padding-top: 110px; }
+      .taiwan-wedge::before, .taiwan-wedge::after { display: none; }
+      .taiwan-wedge .checks { grid-template-columns: 1fr; }
+      .hero--int .hero-stats { gap: 28px; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="index.html">
-      <img src="assets/images/logo/IMG_6412.PNG" alt="HQ Interior Design Logo">
-      <div class="nav-logo-text">
-        <span class="name-zh">惠強室內裝修</span>
-        <span class="name-en">HQ Interior & Space Design</span>
+    <a class="nav-logo nav-logo--int" href="index.html">
+      <img src="assets/images/logo/IMG_6412.PNG" alt="HQ Interior &amp; Space Design Logo">
+      <div>
+        <span class="name-en">HQ Interior &amp; Space Design</span>
+        <span class="name-zh">惠強室內裝修 · Since 1995</span>
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="projects.html">專案案例 Projects</a></li>
-      <li><a href="services.html">服務項目 Services</a></li>
-      <li><a href="about.html">關於我們 About</a></li>
-      <li><a href="careers.html">加入我們 Careers</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="careers.html">Careers</a></li>
     </ul>
-    <a class="btn btn-primary nav-cta" href="contact.html">聯繫我們 Contact</a>
+    <a class="btn btn-primary nav-cta" href="contact.html">Contact</a>
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
@@ -33,16 +297,17 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero hero--int">
   <div class="hero-bg"></div>
+
   <div class="hero-content">
-    <div class="hero-label">Commercial Design &amp; Build · 31+ Years · Taipei</div>
+    <div class="hero-label">Commercial Design &amp; Build · 31 Years · Taipei</div>
     <h1 class="hero-headline">
       Zero Downtime.<br>
       <span class="accent">Turnkey Delivery.</span>
     </h1>
-    <p class="hero-sub-en en">Institutional-grade fit-out for corporations &amp; international brands.</p>
-    <p class="hero-sub-zh">精準施工，營運不中斷｜設計施工統包，一站到位</p>
+    <p class="hero-sub-en en">Institutional-grade fit-out for foreign-HQ enterprises, hotel groups and listed corporations expanding into Taiwan. Design and build, in-house. One contract. One PM.</p>
+    <p class="hero-sub-zh">精準施工，營運不中斷｜為國際企業在台拓點打造商業空間</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="contact.html">Start Your Project →</a>
       <a class="btn btn-outline" href="projects.html">View Portfolio</a>
@@ -51,43 +316,61 @@
       <div class="stat-item">
         <span class="stat-num en">31<span class="stat-unit">+</span></span>
         <span class="stat-label-en en">Years in Operation</span>
-        <span class="stat-label-zh">持續經營</span>
       </div>
       <div class="stat-item">
         <span class="stat-num en">1,600<span class="stat-unit">+</span></span>
-        <span class="stat-label-en en">Projects Completed</span>
-        <span class="stat-label-zh">完成商業案件</span>
+        <span class="stat-label-en en">Commercial Projects</span>
       </div>
       <div class="stat-item">
         <span class="stat-num en">100<span class="stat-unit">%</span></span>
-        <span class="stat-label-en en">In-house Design &amp; Build</span>
-        <span class="stat-label-zh">設計施工自有整合</span>
+        <span class="stat-label-en en">In-House Design &amp; Build</span>
       </div>
       <div class="stat-item">
         <span class="stat-num en">12<span class="stat-unit">M</span></span>
         <span class="stat-label-en en">Post-Handover Warranty</span>
-        <span class="stat-label-zh">完工保固</span>
       </div>
     </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <span class="line"></span>
   </div>
 </section>
 
 <!-- CLIENT LOGOS -->
-<div class="logos-bar">
+<div class="logos-bar logos-bar--int">
   <div class="container">
     <p class="logos-bar-label">Trusted by</p>
     <div class="logos-grid">
-      <span class="logo-item">SECOM 中保科技</span>
-      <span class="logo-item">GOLDSUN GROUP 國產建材實業</span>
-      <span class="logo-item">C.SUN 志聖工業</span>
-      <span class="logo-item">TRANSASIA CATERING 復興空廚</span>
-      <span class="logo-item">KIMPTON HOTEL 金普頓大安酒店</span>
-      <span class="logo-item">POPEYES 大力水手</span>
-      <span class="logo-item">SOUP SPOON 匙碗湯</span>
-      <span class="logo-item">CHEOGAJIP 起家雞</span>
+      <div class="logo-item"><span class="lo-en">SECOM</span><span class="lo-zh">中保科技</span></div>
+
+      <div class="logo-item"><span class="lo-en">C.SUN</span><span class="lo-zh">志聖工業</span></div>
+      <div class="logo-item"><span class="lo-en">TransAsia Catering</span><span class="lo-zh">復興空廚</span></div>
+      <div class="logo-item"><span class="lo-en">Kimpton Hotel</span><span class="lo-zh">金普頓大安酒店</span></div>
+      <div class="logo-item"><span class="lo-en">Popeyes</span><span class="lo-zh">大力水手</span></div>
+      <div class="logo-item"><span class="lo-en">Soup Spoon</span><span class="lo-zh">匙碗湯</span></div>
+      <div class="logo-item"><span class="lo-en">Cheogajip</span><span class="lo-zh">起家雞</span></div>
     </div>
   </div>
 </div>
+
+<!-- "OPENING IN TAIWAN?" WEDGE -->
+<section class="taiwan-wedge">
+  <div class="container">
+    <span class="label">For Foreign-HQ Enterprises</span>
+    <h2>Opening your first Taipei office, hotel or flagship?</h2>
+    <p class="lead">We've delivered Taiwan launches for Kimpton (US), Popeyes (US), Soup Spoon (Singapore) and Cheogajip (Korea). We handle local permitting, vendor management, building-management coordination and procurement documentation in English — so your HQ can sign off without a translator.</p>
+    <div class="checks">
+      <div class="check"><span class="dot"></span><span>English-language scope, drawings &amp; reporting</span></div>
+      <div class="check"><span class="dot"></span><span>Local permitting &amp; building management liaison</span></div>
+      <div class="check"><span class="dot"></span><span>Procurement-grade documentation (audit-ready)</span></div>
+      <div class="check"><span class="dot"></span><span>LEED · Green Building certified capability</span></div>
+      <div class="check"><span class="dot"></span><span>Single PM from briefing to final handover</span></div>
+    </div>
+    <a class="btn btn-primary" href="contact.html" style="background:var(--accent); border-color:var(--accent);">Talk to a Project Director →</a>
+  </div>
+</section>
 
 <!-- WHY HQ -->
 <section class="section">
@@ -95,33 +378,33 @@
     <div class="section-title">
       <span class="label">Why HQ</span>
       <h2>Three Structural Advantages</h2>
-      <p class="sub-en en" style="font-family:var(--font-en); font-size:15px; color:var(--mid); margin-bottom:6px;">What sets HQ apart for institutional and corporate clients</p>
-      <p class="sub-zh">三大核心優勢，從規劃到完工，一切盡在掌控之中</p>
+      <p class="sub-en en">What sets HQ apart for institutional and corporate clients</p>
+      <p class="sub-zh">三大核心優勢，從規劃到完工，一切盡在掌控</p>
     </div>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">🏗</div>
         <div class="why-num">01</div>
-        <h3>零停工施工方法</h3>
-        <span class="sub-en en">Zero-Disruption Construction</span>
-        <p>採用分區分階段施工策略，確保您的企業在裝修期間持續正常營運。噪音、粉塵與動線管控達到機構級標準，每週提供進度報告。</p>
-        <p style="margin-top:10px; font-family: var(--font-en); font-size: 12px; color: var(--light);">Phased, zone-by-zone construction preserving full business operations throughout. Institutional-grade site management, weekly progress reports as standard.</p>
+        <h3>Zero-Disruption Construction</h3>
+        <span class="sub-en en" style="color:var(--mid); font-size:13px;">零停工施工方法</span>
+        <p>Phased, zone-by-zone construction preserving full business operations throughout. Institutional-grade noise, dust and access management. Weekly progress reports as standard.</p>
+        <p style="margin-top:10px; font-family: var(--font-zh); font-size: 12px; color: var(--light);">分區分階段施工，確保營運不中斷。每週提供進度報告。</p>
       </div>
       <div class="why-card">
         <div class="why-icon">📋</div>
         <div class="why-num">02</div>
-        <h3>設計施工一體，單一責任</h3>
-        <span class="sub-en en">Single Contract, Single Team</span>
-        <p>設計與施工由同一團隊執行，一份合約涵蓋全程。不外包設計，不切割責任。從第一次簡報到完工驗收，同一位專案經理全程負責。</p>
-        <p style="margin-top:10px; font-family: var(--font-en); font-size: 12px; color: var(--light);">Design and build by the same in-house team. One contract, one PM, one point of accountability — from briefing to final handover.</p>
+        <h3>Single Contract, Single Team</h3>
+        <span class="sub-en en" style="color:var(--mid); font-size:13px;">設計施工一體，單一責任</span>
+        <p>Design and build by the same in-house team. One contract. One PM. One point of accountability — from briefing to final handover. Eliminates the #1 source of cost overruns in commercial fit-out.</p>
+        <p style="margin-top:10px; font-family: var(--font-zh); font-size: 12px; color: var(--light);">設計與施工同一團隊，單一合約全程負責。</p>
       </div>
       <div class="why-card">
         <div class="why-icon">🏆</div>
         <div class="why-num">03</div>
-        <h3>機構級交付標準</h3>
-        <span class="sub-en en">Institutional-Grade Delivery</span>
-        <p>31+ 年經驗、1,600件案件背書。LEED認證能力，完整採購文件包，符合上市公司與金融機構稽核要求。</p>
-        <p style="margin-top:10px; font-family: var(--font-en); font-size: 12px; color: var(--light);">31+ Years, 1,600+ projects. LEED capable. Full procurement documentation package — audit-ready for institutional clients.</p>
+        <h3>Institutional-Grade Delivery</h3>
+        <span class="sub-en en" style="color:var(--mid); font-size:13px;">機構級交付標準</span>
+        <p>31+ years, 1,600+ projects. LEED / Green Building capable. Full procurement documentation package — audit-ready for listed-company and financial-institution compliance teams.</p>
+        <p style="margin-top:10px; font-family: var(--font-zh); font-size: 12px; color: var(--light);">31年經驗，1,600件案件。</p>
       </div>
     </div>
   </div>
@@ -133,49 +416,61 @@
     <div class="section-title">
       <span class="label">Selected Work</span>
       <h2>Featured Projects</h2>
-      <p class="sub-en en" style="font-family:var(--font-en); font-size:15px; color:var(--mid); margin-bottom:6px;">Office · Hospitality · F&amp;B · Retail — fit-out across sectors</p>
+      <p class="sub-en en">Office · Hospitality · F&amp;B · Retail — fit-out across sectors</p>
       <p class="sub-zh">辦公室、飯店、餐飲連鎖、展示廳 — 跨產業商業空間實績</p>
     </div>
     <div class="projects-grid">
       <div class="project-card large">
+        <img src="assets/images/projects/secom-nangang-complex/photo-01.jpg" alt="SECOM Nangang Complex">
+        <div class="project-card-overlay">
+          <span class="project-type">Corporate Office 企業辦公</span>
+          <h3 class="project-name">
+            <span class="name-zh">中保南港大樓系列</span>
+            <span class="name-en">SECOM Nangang Complex</span>
+          </h3>
+          <span class="project-meta en">2,500 sqm · Nangang, Taipei · 2024–2025</span>
+        </div>
+        <a class="project-link" href="projects/secom-nangang-complex.html">View Case →</a>
+      </div>
+      <div class="project-card">
+        <img src="assets/images/projects/csun/render-01.jpg" alt="C.SUN Industrial">
+        <div class="project-card-overlay">
+          <span class="project-type">Corporate Office 企業辦公</span>
+          <h3 class="project-name">
+            <span class="name-zh">志聖工業</span>
+            <span class="name-en">C.SUN Industrial</span>
+          </h3>
+          <span class="project-meta en">660 sqm · Taiwan · 2025</span>
+        </div>
+        <a class="project-link" href="projects/csun.html">View Case →</a>
+      </div>
+      <div class="project-card">
+        <img src="assets/images/projects/aiontech/render-01.jpg" alt="AIONTECH">
+        <div class="project-card-overlay">
+          <span class="project-type">Corporate Office 企業辦公</span>
+          <h3 class="project-name">
+            <span class="name-zh">博訊科技</span>
+            <span class="name-en">AIONTECH</span>
+          </h3>
+          <span class="project-meta en">825 sqm · Nangang, Taipei · 2025</span>
+        </div>
+        <a class="project-link" href="projects/aiontech.html">View Case →</a>
+      </div>
+      <div class="project-card">
         <img src="assets/images/projects/kimpton/photo-01.jpg" alt="Kimpton Da An Hotel">
         <div class="project-card-overlay">
           <span class="project-type">Hospitality 飯店</span>
-          <h3 class="project-name">Kimpton Da An Hotel</h3>
+          <h3 class="project-name">
+            <span class="name-zh">金普頓大安酒店</span>
+            <span class="name-en">Kimpton Da An Hotel</span>
+          </h3>
           <span class="project-meta en">330 sqm · Da An, Taipei · 2022</span>
         </div>
-        <a class="project-link" href="projects/kimpton.html">查看案例 →</a>
-      </div>
-      <div class="project-card">
-        <img src="assets/images/projects/soup-spoon-101/photo-01.jpg" alt="Soup Spoon Taipei 101">
-        <div class="project-card-overlay">
-          <span class="project-type">F&B 餐飲</span>
-          <h3 class="project-name">Soup Spoon — Taipei 101</h3>
-          <span class="project-meta en">Mall Fit-Out · 2023</span>
-        </div>
-        <a class="project-link" href="projects/soup-spoon-101.html">查看案例 →</a>
-      </div>
-      <div class="project-card">
-        <img src="assets/images/projects/popeyes/photo-01.jpg" alt="Popeyes Xuchang">
-        <div class="project-card-overlay">
-          <span class="project-type">F&B 餐飲</span>
-          <h3 class="project-name">Popeyes — 許昌店</h3>
-          <span class="project-meta en">Retail Fit-Out · Taipei</span>
-        </div>
-        <a class="project-link" href="projects/popeyes.html">查看案例 →</a>
-      </div>
-      <div class="project-card">
-        <img src="assets/images/projects/csun/render-01.jpg" alt="志聖工業 C.SUN Industrial">
-        <div class="project-card-overlay">
-          <span class="project-type">Corporate Office 企業辦公</span>
-          <h3 class="project-name">志聖工業 C.SUN Industrial</h3>
-          <span class="project-meta en">Listed Corporation · Taiwan · 2025</span>
-        </div>
-        <a class="project-link" href="projects/csun.html">查看案例 →</a>
+        <a class="project-link" href="projects/kimpton.html">View Case →</a>
       </div>
     </div>
     <div style="text-align:center; margin-top: 48px;">
-      <a class="btn btn-outline-dark" href="projects.html">查看所有案例 View All Projects →</a>
+      <a class="btn btn-outline-dark" href="projects.html">View All 22 Projects →</a>
     </div>
   </div>
 </section>
@@ -186,49 +481,48 @@
     <div class="section-title center">
       <span class="label">Services</span>
       <h2>Integrated Services</h2>
-      <p class="sub-en en" style="font-family:var(--font-en); font-size:15px; color:var(--mid); margin-bottom:4px;">10 disciplines — all in-house, single point of accountability</p>
-      <p class="sub-zh" style="font-size:13px; color:var(--light);">設計、施工、保固，一體整合</p>
+      <p class="sub-en en">10 disciplines — all in-house, single point of accountability</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-number en">01</div>
-        <h3>辦公空間設計</h3>
-        <span class="en-name en">Office Interior Design</span>
-        <p>企業辦公環境全方位規劃，從工作效能到品牌呈現，打造符合企業文化的辦公場域。</p>
+        <h3>Office Interior Design</h3>
+        <span class="en-name en" style="color:var(--mid);">辦公空間設計</span>
+        <p>End-to-end corporate office design — brand expression, workplace efficiency, headcount planning, future-flex zoning.</p>
       </div>
       <div class="service-card">
         <div class="service-number en">02</div>
-        <h3>商業空間設計</h3>
-        <span class="en-name en">Commercial Space Design</span>
-        <p>餐飲、零售、展廳等商業場域設計，以品牌策略驅動空間規劃，創造顧客體驗。</p>
+        <h3>Commercial Space Design</h3>
+        <span class="en-name en" style="color:var(--mid);">商業空間設計</span>
+        <p>F&amp;B, retail, exhibition and showroom design — brand-led space planning that drives customer experience.</p>
       </div>
       <div class="service-card">
         <div class="service-number en">03</div>
-        <h3>設計施工統包</h3>
-        <span class="en-name en">Design & Build / Turnkey</span>
-        <p>從設計到完工，單一合約全程負責。設計與施工一體整合，避免介面風險。</p>
+        <h3>Design &amp; Build / Turnkey</h3>
+        <span class="en-name en" style="color:var(--mid);">設計施工統包</span>
+        <p>Single contract from concept to handover. Design and construction integrated under one accountable PM.</p>
       </div>
       <div class="service-card">
         <div class="service-number en">04</div>
-        <h3>空間規劃顧問</h3>
-        <span class="en-name en">Space Planning & Consulting</span>
-        <p>專業顧問服務，提供時程建議、工程可行性評估與成本分析，降低決策風險。</p>
+        <h3>Space Planning &amp; Consulting</h3>
+        <span class="en-name en" style="color:var(--mid);">空間規劃顧問</span>
+        <p>Pre-project consulting: feasibility, scheduling, cost analysis. Reduce decision risk before commitment.</p>
       </div>
       <div class="service-card">
         <div class="service-number en">05</div>
-        <h3>智慧空間 / AIoT</h3>
-        <span class="en-name en">Smart Office & AIoT Integration</span>
-        <p>AIoT全面串聯，智慧辦公室整合解決方案，提升空間使用效能與管理效率。</p>
+        <h3>Smart Office &amp; AIoT</h3>
+        <span class="en-name en" style="color:var(--mid);">智慧空間 / AIoT</span>
+        <p>AIoT integration for lighting, access, climate, occupancy. Smart-building infrastructure as a layer, not an add-on.</p>
       </div>
       <div class="service-card">
         <div class="service-number en">06</div>
-        <h3>完工保固服務</h3>
-        <span class="en-name en">Post-Handover Warranty</span>
-        <p>12個月保固期，快速響應維修機制，定期客戶關懷，確保長期工程品質。</p>
+        <h3>Post-Handover Warranty</h3>
+        <span class="en-name en" style="color:var(--mid);">完工保固服務</span>
+        <p>12-month warranty with rapid-response repair. Scheduled client check-ins. Long-term quality accountability.</p>
       </div>
     </div>
     <div style="text-align:center; margin-top: 40px;">
-      <a class="btn btn-outline-dark" href="services.html">全部服務項目 All Services →</a>
+      <a class="btn btn-outline-dark" href="services.html">All Services →</a>
     </div>
   </div>
 </section>
@@ -238,13 +532,13 @@
   <div class="container">
     <div class="cta-banner-inner">
       <div class="cta-text">
-        <h2 style="font-family:var(--font-en);">Ready to start your project?<br><span style="font-size:0.55em; font-weight:400; color:rgba(255,255,255,0.5);">準備好開始了嗎？</span></h2>
+        <h2 style="font-family:var(--font-en);">Ready to start your Taiwan project?<br><span style="font-size:0.55em; font-weight:400; color:rgba(255,255,255,0.5);">準備好開始了嗎？</span></h2>
         <p class="sub">Tell us your space requirements — we respond within one business day.<br><span style="font-size:13px; color:rgba(255,255,255,0.40);">告訴我們您的空間需求，一個工作天內回覆。</span></p>
       </div>
       <div class="cta-actions">
         <a class="btn btn-outline" href="contact.html">Get in Touch →</a>
         <div class="cta-contact-info">
-          <a href="tel:0225573003" style="font-family:var(--font-en);">02-2557-3003</a>
+          <a href="tel:+886225573003" style="font-family:var(--font-en);">+886-2-2557-3003</a>
           <a href="mailto:info@hqdesign.tw" style="font-family:var(--font-en);">info@hqdesign.tw</a>
         </div>
       </div>
@@ -258,16 +552,17 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="assets/images/logo/IMG_6412.PNG" alt="HQ Logo">
           <div class="footer-logo-text">
-            <span class="name-zh">惠強室內裝修股份有限公司</span>
-            <span class="name-en en">HQ Interior & Space Design Co., Ltd.</span>
+            <span class="name-en en" style="font-size:16px; font-weight:700;">HQ Interior &amp; Space Design Co., Ltd.</span>
+            <span class="name-zh" style="font-size:13px; color:rgba(255,255,255,0.55);">惠強室內裝修股份有限公司</span>
           </div>
         </div>
-        <p class="footer-tagline"><span style="font-family: var(--font-en); font-size:12px; display:block; margin-bottom:4px;">Precision Craftsmanship. Zero Downtime. 31+ Years.</span>匠藝專工，一應皆備。</p>
+        <p class="footer-tagline">
+          <span style="font-family: var(--font-en); font-size:12px; display:block; margin-bottom:4px;">Precision Craftsmanship. Zero Downtime. 31+ Years.</span>
+          匠藝專工，一應皆備。
+        </p>
         <div class="footer-certs">
           <span class="cert-badge">LEED</span>
-          
           <span class="cert-badge">Green Building</span>
           <span class="cert-badge">AIoT</span>
           <span class="cert-badge">ESG</span>
@@ -276,35 +571,35 @@
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="projects.html">專案案例 Projects</a></li>
-          <li><a href="services.html">服務項目 Services</a></li>
-          <li><a href="about.html">關於我們 About</a></li>
-          <li><a href="careers.html">加入我們 Careers</a></li>
-          <li><a href="contact.html">聯繫我們 Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html">辦公空間設計</a></li>
-          <li><a href="services.html">商業空間設計</a></li>
-          <li><a href="services.html">設計施工統包</a></li>
-          <li><a href="services.html">智慧空間 / AIoT</a></li>
-          <li><a href="services.html">完工保固服務</a></li>
+          <li><a href="services.html">Office Interior Design</a></li>
+          <li><a href="services.html">Commercial Space Design</a></li>
+          <li><a href="services.html">Design &amp; Build / Turnkey</a></li>
+          <li><a href="services.html">Smart Office / AIoT</a></li>
+          <li><a href="services.html">Post-Handover Warranty</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="#">115台北市南港區<br>經貿二路135號9樓</a></li>
-          <li><a href="tel:0225573003">02-2557-3003</a></li>
+          <li><a href="#">9F, No.135 Jingmao 2nd Rd<br>Nangang, Taipei 115, Taiwan</a></li>
+          <li><a href="tel:+886225573003">+886-2-2557-3003</a></li>
           <li><a href="mailto:info@hqdesign.tw">info@hqdesign.tw</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="en">© 2026 HQ Interior & Space Design Co., Ltd. All rights reserved.</p>
-      <p class="footer-reg en">統一編號 89956251 · hqdesign.tw</p>
+      <p class="en">© 2026 HQ Interior &amp; Space Design Co., Ltd. All rights reserved.</p>
+      <p class="footer-reg en">Tax ID 89956251 · hqdesign.tw</p>
     </div>
   </div>
 </footer>
@@ -312,4 +607,3 @@
 <script src="assets/js/main.js"></script>
 </body>
 </html>
-                                                                                                                                                                                                                                                   
