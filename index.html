@@ -107,10 +107,14 @@
     /* --- Logos bar restyled: stacked EN / ZH labels --- */
     .logos-bar--int { background: var(--white); border-bottom: 1px solid var(--border); padding: 36px 0; }
     .logos-bar--int .logos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 24px 20px;
-      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 0;
+    }
+    .logos-bar--int .logo-item {
+      flex: 0 0 20%;
+      box-sizing: border-box;
     }
     .logos-bar--int .logo-item {
       display: flex;
